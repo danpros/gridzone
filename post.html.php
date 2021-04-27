@@ -49,6 +49,7 @@
 				<?php } ?>
 				<span class="entry-author"><i class="far fa-user"></i><a href="<?php echo $p->authorUrl;?>" title="Posts by <?php echo $p->authorName;?>" rel="author"><?php echo $p->authorName;?></a></span>
 				<span class="entry-category"><?php echo $p->category;?></span>
+				<?php if (login()) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> Edit</a></span>'; } ?>
 			</div>
 		</header>
 		

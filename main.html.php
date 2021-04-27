@@ -49,6 +49,7 @@
 				<?php } elseif (facebook()) { ?>
 				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></li>
 				<?php } ?>
+				<?php if (login()) { echo '<li class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> Edit</a></li>'; } ?>
 			</ul>
 
 		</div>
