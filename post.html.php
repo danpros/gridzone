@@ -45,7 +45,7 @@
 				<?php if (disqus_count()) { ?>
 				<span class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n('Comments');?></a></span>
 				<?php } elseif (facebook()) { ?>
-				<span class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></span>
+				<span class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> <?php echo i18n('Comments');?></span></a></span>
 				<?php } ?>
 				<span class="entry-author"><i class="far fa-user"></i><a href="<?php echo $p->authorUrl;?>" title="<?php echo i18n('Posts_by') . ' ' . $p->authorName;?>" rel="author"><?php echo $p->authorName;?></a></span>
 				<span class="entry-category"><?php echo $p->category;?></span>
