@@ -47,7 +47,7 @@
 				<?php } elseif (facebook()) { ?>
 				<span class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></span>
 				<?php } ?>
-				<span class="entry-author"><i class="far fa-user"></i><a href="<?php echo $p->authorUrl;?>" title="<?php echo i18n('Posts') . ' ' . i18n('by') . ' ' . $p->authorName;?>" rel="author"><?php echo $p->authorName;?></a></span>
+				<span class="entry-author"><i class="far fa-user"></i><a href="<?php echo $p->authorUrl;?>" title="<?php echo i18n('Posts_by') . ' ' . $p->authorName;?>" rel="author"><?php echo $p->authorName;?></a></span>
 				<span class="entry-category"><?php echo $p->category;?></span>
 				<?php if (login()) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i>' . i18n('Edit') . '</a></span>'; } ?>
 			</div>
