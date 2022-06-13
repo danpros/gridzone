@@ -180,7 +180,7 @@ input, textarea, button, select, label { font-family: inherit; }
 .entry blockquote.twitter-tweet:before { content: "\f099"; }
 .entry code, .entry pre { font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace; font-size: 11px; }
 .entry pre { background: url(../img/pre.png) repeat top; padding: 18px 20px; margin: 30px 0; border: 1px solid #ddd; line-height: 19px; white-space: pre-wrap; word-wrap: break-word; overflow-x: auto; overflow-y: hidden; }
-.entry code { background: #ddd; padding: 0 3px; }
+.entry code { padding: 0 3px; }
 .entry ins { background: #fff486; }
 .entry sub,
 .entry sup { font-size: 62.5%; }
