@@ -209,7 +209,7 @@
 											# Sort the months
 											krsort($by_month);
 											foreach ($by_month as $month => $count) {
-											$name = strftime('%B', mktime(0, 0, 0, $month, 1, 2010));
+											$name = format_date(mktime(0, 0, 0, $month, 1, 2010), 'F');
 											echo '<li class="item"><a href="' . site_url() . 'archive/' . $year . '-' . $month . '">' . $name . ' ' . $year .'</a> ('.$count.')</li>';
 											}
 										}
