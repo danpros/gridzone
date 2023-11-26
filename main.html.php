@@ -2,7 +2,7 @@
 <div class="masonry" id="masonry">
 <?php foreach ($posts as $p):?>
 <?php $img = get_image($p->body);?>
-	<article class="masonry-item post hentry">	
+	<article class="masonry-item post hentry">
 		<div class="masonry-inner">
 
 			<?php if (!empty($p->image) || !empty($img)  || empty($vidTmb)) :?>
@@ -20,7 +20,7 @@
 					<img src="<?php echo $img;?>" width="100%">
 					<?php } ?>
 				</a>
-				
+
 				<div class="entry-category"><?php echo $p->category;?></div>
 			</div>
 			<?php endif;?>
@@ -38,22 +38,22 @@
 				<a href="<?php echo $p->url;?>" rel="bookmark"><?php echo $p->title;?></a>
 			</h2><!--/.entry-title-->
 			<?php } ?>
-			
+
 			<?php if (empty($p->image) && empty($img) && empty($p->video) && empty($p->audio) && empty($p->quote)) :?>
 				<div class="entry-meta"><?php echo $p->description;?></div>
 			<?php endif;?>
 			<ul class="entry-meta group">
 				<li class="entry-date"><i class="far fa-calendar"></i> <?php echo format_date($p->date);?></li>
-				<?php if (disqus_count()) { ?> 
-				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#disqus_thread"> Comments</a></li>
+				<?php if (disqus_count()) { ?>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n('Comments');?></a></li>
 				<?php } elseif (facebook()) { ?>
 				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></li>
 				<?php } ?>
-				<?php if (login()) { echo '<li class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> Edit</a></li>'; } ?>
+				<?php if (login()) { echo '<li class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
 			</ul>
 
 		</div>
-	</article><!--/.post-->	
+	</article><!--/.post-->
 <?php endforeach;?>
 </div>
 
