@@ -1,15 +1,15 @@
 <?php if (!defined('HTMLY')) die('HTMLy'); ?>
 <!doctype html>
-<html lang="<?php echo str_replace('_', '-', config('language'));?>">
+<html lang="<?php echo blog_language();?>">
 <head>
     <?php echo head_contents();?>
     <title><?php echo $title;?></title>
     <meta name="description" content="<?php echo $description; ?>"/>
     <link rel="canonical" href="<?php echo $canonical; ?>" />
-<link rel="stylesheet" id="gridzone-style-css" href="<?php echo site_url();?>themes/gridzone/css/style.css" type="text/css" media="all">
-<link rel="stylesheet" id="gridzone-responsive-css" href="<?php echo site_url();?>themes/gridzone/css/responsive.css" type="text/css" media="all" />
-<link rel="stylesheet" id="gridzone-font-awesome-css" href="<?php echo site_url();?>themes/gridzone/fonts/all.min.css" type="text/css" media="all" />
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/jquery.js" id="jquery-core-js"></script>
+<link rel="stylesheet" id="gridzone-style-css" href="<?php echo theme_path();?>css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="gridzone-responsive-css" href="<?php echo theme_path();?>css/responsive.css" type="text/css" media="all" />
+<link rel="stylesheet" id="gridzone-font-awesome-css" href="<?php echo theme_path();?>fonts/all.min.css" type="text/css" media="all" />
+<script type="text/javascript" src="<?php echo theme_path();?>js/jquery.js" id="jquery-core-js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"> 
 </head>
@@ -88,7 +88,7 @@
 						<?php if (isset($is_front)):?>
 							<div id="profile" class="pad group">
 								<div id="profile-inner">
-									<div id="profile-image"><img src="<?php echo site_url();?>themes/gridzone/img/avatar.png" alt="<?php echo blog_title();?>"></div>
+									<div id="profile-image"><img src="<?php echo theme_path();?>img/avatar.png" alt="<?php echo blog_title();?>"></div>
 									<div id="profile-name">Welcome</div>
 									<div id="profile-description"><?php echo blog_description();?></div>
 								</div>
@@ -276,11 +276,11 @@
 	var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
 	/* ]]> */
 </script>	
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/imagesloaded.pkgd.min.js" id="gridzone-nav-script-js"></script>
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/jq-sticky-anything.min.js" id="gridzone-nav-script-js"></script>
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/masonry.pkgd.min.js" id="gridzone-nav-script-js"></script>
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/nav.js" id="gridzone-nav-script-js"></script>
-<script type="text/javascript" src="<?php echo site_url();?>themes/gridzone/js/scripts.js" id="gridzone-nav-script-js"></script>
+<script type="text/javascript" src="<?php echo theme_path();?>js/imagesloaded.pkgd.min.js" id="gridzone-nav-script-js"></script>
+<script type="text/javascript" src="<?php echo theme_path();?>js/jq-sticky-anything.min.js" id="gridzone-nav-script-js"></script>
+<script type="text/javascript" src="<?php echo theme_path();?>js/masonry.pkgd.min.js" id="gridzone-nav-script-js"></script>
+<script type="text/javascript" src="<?php echo theme_path();?>js/nav.js" id="gridzone-nav-script-js"></script>
+<script type="text/javascript" src="<?php echo theme_path();?>js/scripts.js" id="gridzone-nav-script-js"></script>
 <?php if (analytics()): ?><?php echo analytics() ?><?php endif; ?>
 </body>
 </html>

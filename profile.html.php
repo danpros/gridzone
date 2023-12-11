@@ -44,7 +44,12 @@
 			<?php endif;?>
 			<ul class="entry-meta group">
 				<li class="entry-date"><i class="far fa-calendar"></i> <?php echo format_date($p->date);?></li>
-				<li class="entry-comments"><a class="entry-comments" href="http://demo.alx.media/gridzone/2019/07/07/combining-design/#comments"><i class="far fa-comment"></i><span>4</span></a></li>
+				<?php if (disqus_count()) { ?>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n('Comments');?></a></li>
+				<?php } elseif (facebook()) { ?>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></li>
+				<?php } ?>
+				<?php if (login()) { echo '<li class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
 			</ul>
 		<?php } else { ?>
 			<h2 class="entry-title">
