@@ -76,3 +76,7 @@
 </div>
 <?php endif; ?>
 <?php endif;?>
+
+<?php if (disqus_count()): ?>
+    <?php echo disqus_count() ?>
+<?php endif; ?>
