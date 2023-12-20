@@ -198,22 +198,12 @@
 								<div class="alx-tabs-container">
 
 									<div id="tab-category" class="alx-tab group" style="">
-									<?php echo category_list();?>
+									<?php category_list();?>
 									</div><!--/.alx-tab-->
 
 									<div id="tab-archive" class="alx-tab group" style="display: none;">
 									<ul class="archives-list">
-										<?php $data = archive_list(true);
-										foreach ($data as $year => $months) {
-											$by_month = array_count_values($months);
-											# Sort the months
-											krsort($by_month);
-											foreach ($by_month as $month => $count) {
-											$name = format_date(mktime(0, 0, 0, $month, 1, 2010), 'F');
-											echo '<li class="item"><a href="' . site_url() . 'archive/' . $year . '-' . $month . '">' . $name . ' ' . $year .'</a> ('.$count.')</li>';
-											}
-										}
-										?>
+										<?php archive_list('month-year');?>
 									</ul>
 									</div><!--/.alx-tab-->
 
