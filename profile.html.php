@@ -14,7 +14,7 @@
 					<img src="//img.youtube.com/vi/<?php echo get_video_id($p->video);?>/sddefault.jpg" width="100%">
 					<span class="thumb-icon"><i class="fas fa-play"></i></span>
 					<?php } elseif (!empty($p->audio)) {?>
-					<img src="<?php echo site_url();?>themes/gridzone/img/soundcloud.jpg" width="100%">
+					<img src="<?php echo theme_path();?>img/soundcloud.jpg" width="100%">
 					<span class="thumb-icon"><i class="fas fa-volume-up"></i></span>
 					<?php } elseif (!empty($img)) {?>
 					<img src="<?php echo $img;?>" width="100%">
@@ -47,13 +47,13 @@
 				<?php if (disqus_count()) { ?>
 				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#disqus_thread"> <?php echo i18n('Comments');?></a></li>
 				<?php } elseif (facebook()) { ?>
-				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> Comments</span></a></li>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $p->url ?>#comments"><span><fb:comments-count href=<?php echo $p->url ?>></fb:comments-count> <?php echo i18n('Comments');?></span></a></li>
 				<?php } ?>
 				<?php if (login()) { echo '<li class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
 			</ul>
 		<?php } else { ?>
 			<h2 class="entry-title">
-				Posts not found!
+				<?php echo i18n('No_posts_found');?>
 			</h2><!--/.entry-title-->
 		<?php } ?>			
 		</div>

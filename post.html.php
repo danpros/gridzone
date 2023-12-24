@@ -62,11 +62,11 @@
 
 
 		<div class="entry-footer group">
-				<div class="post-tags"><span>Tags:</span> <?php echo $p->tag;?></div>
+				<div class="post-tags"><span><?php echo i18n('Tags');?>:</span> <?php echo $p->tag;?></div>
 			<div class="clear"></div>
 
 			<div class="author-bio">
-				<div class="bio-avatar"><img alt="<?php echo $author->name;?>" src="<?php echo site_url();?>themes/gridzone/img/avatar.png"></div>
+				<div class="bio-avatar"><img alt="<?php echo $author->name;?>" src="<?php echo theme_path();?>img/avatar.png"></div>
 				<p class="bio-name"><?php echo $author->name;?></p>
 				<div class="bio-desc"><?php echo $author->about;?></div>
 				<div class="clear"></div>
@@ -98,7 +98,7 @@
 
 			<?php if (facebook() || disqus()): ?>
 			<div id="comments" class="themeform">
-				<h3 class="heading">Leave a Reply</h3>
+				<h3 class="heading"><?php echo i18n('Comments');?></h3>
 				<?php if (facebook()): ?>
 					<div class="fb-comments" data-href="<?php echo $p->url ?>" data-numposts="<?php echo config('fb.num') ?>" data-colorscheme="<?php echo config('fb.color') ?>"></div>
 				<?php endif; ?>

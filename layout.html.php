@@ -55,7 +55,7 @@
 					<div class="search-expand-inner">
 						<form class="searchform themeform" >
 						<div>
-						<input type="text" class="search" name="search" onblur="if(this.value=='')this.value='To search type and hit enter';" onfocus="if(this.value=='To search type and hit enter')this.value='';" value="To search type and hit enter">
+						<input type="text" class="search" name="search" onblur="if(this.value=='')this.value='<?php echo i18n('Search_for');?>';" onfocus="if(this.value=='<?php echo i18n('Search_for');?>')this.value='';" value="<?php echo i18n('Search_for');?>">
 						</div>
 						</form>					
 					</div>
@@ -89,7 +89,7 @@
 							<div id="profile" class="pad group">
 								<div id="profile-inner">
 									<div id="profile-image"><img src="<?php echo theme_path();?>img/avatar.png" alt="<?php echo blog_title();?>"></div>
-									<div id="profile-name">Welcome</div>
+									<div id="profile-name"><?php echo blog_tagline();?></div>
 									<div id="profile-description"><?php echo blog_description();?></div>
 								</div>
 							</div>
@@ -165,7 +165,7 @@
 
 							<?php if (!isset($is_front) && !isset($is_blog)):?>
 							<div id="recent-posts" class="widget widget_recent_entries">
-							<h3 class="group"><span>Recent Posts</span></h3>
+							<h3 class="group"><span><?php echo i18n("Recent_posts");?></span></h3>
 								<?php echo recent_posts();?>
 							</div>
 							<?php endif;?>
@@ -173,7 +173,7 @@
 							<?php if (config('views.counter') === 'true') :?>
 							<?php if (isset($is_front) || isset($is_blog)):?>
 							<div id="popular-posts" class="widget widget_popular_entries">
-							<h3 class="group"><span>Popular Posts</span></h3>
+							<h3 class="group"><span><?php echo i18n("Popular_posts");?></span></h3>
 								<?php echo popular_posts();?>
 							</div>
 							<?php endif;?>
@@ -181,7 +181,7 @@
 							
 							<?php if (disqus()): ?>
 							<div id="recent-posts" class="widget">
-							<h3 class="group"><span>Recent Comments</span></h3>
+							<h3 class="group"><span><?php echo i18n("Comments");?></span></h3>
 								<script src="//<?php echo config('disqus.shortname');?>.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=48&amp;excerpt_length=200&amp;hide_mods=0" type="text/javascript"></script><style>li.dsq-widget-item {padding-top:15px;} img.dsq-widget-avatar {margin-right:5px;} ul.dsq-widget-list {padding-left:0px}</style>
 							</div>
 							<?php endif;?>
@@ -189,9 +189,9 @@
 							<div id="alxtabs" class="widget widget_alx_tabs" style="margin-bottom: 40px;">
 
 								<ul class="alx-tabs-nav group tab-count-3">
-									<li class="alx-tab tab-category active"><a href="#tab-category" title="Categories"><i class="fas fa-folder"></i><span>Categories</span></a></li>
-									<li class="alx-tab tab-calendar-alt"><a href="#tab-archive" title="Archives"><i class="fas fa-calendar-alt"></i><span>Archives</span></a></li>
-									<li class="alx-tab tab-tags"><a href="#tab-tags" title="Tags"><i class="fas fa-tags"></i><span>Tags</span></a></li>
+									<li class="alx-tab tab-category active"><a href="#tab-category" title="Categories"><i class="fas fa-folder"></i><span><?php echo i18n("Categories");?></span></a></li>
+									<li class="alx-tab tab-calendar-alt"><a href="#tab-archive" title="Archives"><i class="fas fa-calendar-alt"></i><span><?php echo i18n("Archives");?></span></a></li>
+									<li class="alx-tab tab-tags"><a href="#tab-tags" title="Tags"><i class="fas fa-tags"></i><span><?php echo i18n("Tags");?></span></a></li>
 								</ul>
 
 
