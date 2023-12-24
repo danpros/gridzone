@@ -189,9 +189,9 @@
 							<div id="alxtabs" class="widget widget_alx_tabs" style="margin-bottom: 40px;">
 
 								<ul class="alx-tabs-nav group tab-count-3">
-									<li class="alx-tab tab-category active"><a href="#tab-category" title="Categories"><i class="fas fa-folder"></i><span><?php echo i18n("Categories");?></span></a></li>
-									<li class="alx-tab tab-calendar-alt"><a href="#tab-archive" title="Archives"><i class="fas fa-calendar-alt"></i><span><?php echo i18n("Archives");?></span></a></li>
-									<li class="alx-tab tab-tags"><a href="#tab-tags" title="Tags"><i class="fas fa-tags"></i><span><?php echo i18n("Tags");?></span></a></li>
+									<li class="alx-tab tab-category active"><a href="#tab-category" title="<?php echo i18n("Categories");?>"><i class="fas fa-folder"></i><span><?php echo i18n("Categories");?></span></a></li>
+									<li class="alx-tab tab-calendar-alt"><a href="#tab-archive" title="<?php echo i18n("Archives");?>"><i class="fas fa-calendar-alt"></i><span><?php echo i18n("Archives");?></span></a></li>
+									<li class="alx-tab tab-tags"><a href="#tab-tags" title="<?php echo i18n("Tags");?>"><i class="fas fa-tags"></i><span><?php echo i18n("Tags");?></span></a></li>
 								</ul>
 
 
