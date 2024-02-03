@@ -198,18 +198,18 @@
 								<div class="alx-tabs-container">
 
 									<div id="tab-category" class="alx-tab group" style="">
-									<?php category_list();?>
+									<?php echo category_list();?>
 									</div><!--/.alx-tab-->
 
 									<div id="tab-archive" class="alx-tab group" style="display: none;">
 									<ul class="archives-list">
-										<?php archive_list('month-year');?>
+										<?php echo archive_list('month-year');?>
 									</ul>
 									</div><!--/.alx-tab-->
 
 
 									<div id="tab-tags" class="alx-tab group" style="display: none;">
-									<?php tag_cloud();?>
+									<?php echo tag_cloud();?>
 									</div><!--/.alx-tab-->
 
 								</div>
