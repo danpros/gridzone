@@ -1542,3 +1542,7 @@ font-size: 14px;
 .menu .active a {
 color: #333;	
 }
+
+.toc-wrapper {
+display: block!important;
+}
