@@ -1543,6 +1543,6 @@ font-size: 14px;
 color: #333;	
 }
 
-.toc-wrapper {
+.toc-wrapper.visible {
 display: block!important;
 }
