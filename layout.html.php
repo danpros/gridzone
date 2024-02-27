@@ -62,20 +62,7 @@
 				</div>
 				
 			</div>
-			
-			<ul class="social-links">
-				<?php if(!empty(config('social.facebook'))):?>
-				<li><a rel="nofollow" class="social-tooltip" title="Facebook" href="<?php echo config('social.facebook');?>"><i class="fab fa-facebook"></i></a></li>
-				<?php endif;?>
-				<?php if(!empty(config('social.twitter'))):?>
-				<li><a rel="nofollow" class="social-tooltip" title="Twitter" href="<?php echo config('social.twitter');?>"><i class="fab fa-twitter"></i></a></li>
-				<?php endif;?>
-				<?php if(!empty(config('social.github'))):?>
-				<li><a rel="nofollow" class="social-tooltip" title="GitHub" href="<?php echo config('social.github');?>"><i class="fab fa-github"></i></a></li>
-				<?php endif;?>
-				<li><a class="social-tooltip" title="RSS" href="<?php echo site_url();?>feed/rss"><i class="fas fa-rss"></i></a></li>
-			</ul>			
-							
+			<?php echo social('social-links');?>					
 	</div>
 	
 	
@@ -238,19 +225,8 @@
 										
 					<div id="copyright"><?php echo copyright();?></div><!--/#copyright-->
 					<div id="credit"><span>Design by <a href="http://alx.media/" rel="nofollow" target="_blank">Alx</a>.</span></div><!--/#credit-->
-										
-					<ul class="social-links">
-						<?php if(!empty(config('social.facebook'))):?>
-						<li><a rel="nofollow" class="social-tooltip" title="Facebook" href="<?php echo config('social.facebook');?>"><i class="fab fa-facebook"></i></a></li>
-						<?php endif;?>
-						<?php if(!empty(config('social.twitter'))):?>
-						<li><a rel="nofollow" class="social-tooltip" title="Twitter" href="<?php echo config('social.twitter');?>"><i class="fab fa-twitter"></i></a></li>
-						<?php endif;?>
-						<?php if(!empty(config('social.github'))):?>
-						<li><a rel="nofollow" class="social-tooltip" title="GitHub" href="<?php echo config('social.github');?>"><i class="fab fa-github"></i></a></li>
-						<?php endif;?>
-						<li><a rel="nofollow" class="social-tooltip" title="RSS" href="<?php echo site_url();?>feed/rss"><i class="fas fa-rss"></i></a></li>
-					</ul>
+			
+					<?php echo social('social-links');?>
 					
 				</div>
 							
