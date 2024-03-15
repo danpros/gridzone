@@ -6,6 +6,7 @@
     <title><?php echo $title;?></title>
     <meta name="description" content="<?php echo $description; ?>"/>
     <link rel="canonical" href="<?php echo $canonical; ?>" />
+    <?php echo $metatags;?>
 <link rel="stylesheet" id="gridzone-style-css" href="<?php echo theme_path();?>css/style.css" type="text/css" media="all">
 <link rel="stylesheet" id="gridzone-responsive-css" href="<?php echo theme_path();?>css/responsive.css" type="text/css" media="all" />
 <link rel="stylesheet" id="gridzone-font-awesome-css" href="<?php echo theme_path();?>fonts/all.min.css" type="text/css" media="all" />
