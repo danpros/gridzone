@@ -17,11 +17,11 @@
 		<div class="entry-footer group">
 		
 			<ul class="post-nav group">
-			<?php if (!empty($next)): ?>
-				<li class="next"><a href="<?php echo($next['url']); ?>" rel="next"><i class="fas fa-chevron-right"></i><strong><?php echo i18n('Next');?></strong> <span><?php echo($next['title']); ?></span></a></li>
-			<?php endif;?>
 			<?php if (!empty($prev)): ?>
-				<li class="previous"><a href="<?php echo($prev['url']); ?>" rel="prev"><i class="fas fa-chevron-left"></i><strong><?php echo i18n('Prev');?></strong> <span><?php echo($prev['title']); ?></span></a></li>
+				<li class="next"><a href="<?php echo($prev['url']); ?>" rel="next"><i class="fas fa-chevron-right"></i><strong><?php echo i18n('Next');?></strong> <span><?php echo($prev['title']); ?></span></a></li>
+			<?php endif;?>
+			<?php if (!empty($next)): ?>
+				<li class="previous"><a href="<?php echo($next['url']); ?>" rel="prev"><i class="fas fa-chevron-left"></i><strong><?php echo i18n('Prev');?></strong> <span><?php echo($next['title']); ?></span></a></li>
 			<?php endif;?>
 			</ul>
 		

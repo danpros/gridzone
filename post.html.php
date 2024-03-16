@@ -30,7 +30,6 @@
 			</div>
 			<?php endif;?>
 
-
 		</div>
 
 		</div>
@@ -72,20 +71,18 @@
 				<div class="clear"></div>
 			</div>
 
-
 			<div class="sharrre-container sharrre-header group">
 				<span>Share</span>
-				<div id="twitter" class="sharrre"><a class="box group" href="https://twitter.com/share?url=<?php echo $p->url ?>&text=<?php echo $p->title ?>" target="_blank"><div class="count"><i class="fas fa-plus"></i></div><div class="share"><i class="fab fa-twitter"></i></div></a></div>
-				<div id="facebook" class="sharrre"><a class="box group" href="https://www.facebook.com/sharer.php?u=<?php echo $p->url ?>&t=<?php echo $p->title ?>" target="_blank"><div class="count"><i class="fas fa-plus"></i></div><div class="share"><i class="fab fa-facebook-square"></i></div></a></div>
+				<div id="twitter" class="sharrre"><a class="box group" href="https://twitter.com/share?url=<?php echo $p->url ?>&text=<?php echo $p->title ?>" target="_blank" rel="nofollow"><div class="count"><i class="fas fa-plus"></i></div><div class="share"><i class="fab fa-twitter"></i></div></a></div>
+				<div id="facebook" class="sharrre"><a class="box group" href="https://www.facebook.com/sharer.php?u=<?php echo $p->url ?>&t=<?php echo $p->title ?>" target="_blank" rel="nofollow"><div class="count"><i class="fas fa-plus"></i></div><div class="share"><i class="fab fa-facebook-square"></i></div></a></div>
 			</div><!--/.sharrre-container-->
-
 
 			<ul class="post-nav group">
 			<?php if (!empty($next)): ?>
-				<li class="next"><a href="<?php echo($next['url']); ?>" rel="next"><i class="fas fa-chevron-right"></i><strong><?php echo i18n('Next');?></strong> <span><?php echo($next['title']); ?></span></a></li>
+				<li class="previous"><a href="<?php echo($next['url']); ?>" rel="next"><i class="fas fa-chevron-left"></i><strong><?php echo i18n('Next');?></strong> <span><?php echo($next['title']); ?></span></a></li>
 			<?php endif;?>
 			<?php if (!empty($prev)): ?>
-				<li class="previous"><a href="<?php echo($prev['url']); ?>" rel="prev"><i class="fas fa-chevron-left"></i><strong><?php echo i18n('Prev');?></strong> <span><?php echo($prev['title']); ?></span></a></li>
+				<li class="next"><a href="<?php echo($prev['url']); ?>" rel="prev"><i class="fas fa-chevron-right"></i><strong><?php echo i18n('Prev');?></strong> <span><?php echo($prev['title']); ?></span></a></li>
 			<?php endif;?>
 			</ul>
 
@@ -107,8 +104,70 @@
 				<?php endif; ?>
 			</div><!--/#comments-->
 			<?php endif; ?>
+			
 		</div>
 
 	</div>
 
 </article>
+
+<?php $related = get_related($p->related, true, config('related.count'));?>
+<?php if (!empty($related)):?>
+<div class="masonry" id="masonry">
+<?php $i = 1; ?>
+<?php foreach ($related as $r):?>
+<?php $img = get_image($r->body);?>
+	<article class="masonry-item post hentry">
+		<div class="masonry-inner">
+			<?php if (!empty($r->image) || !empty($img)) :?>
+			<div class="entry-top">
+				<a class="entry-thumbnail" href="<?php echo $r->url;?>">
+					<?php if (!empty($r->image)) {?>
+					<img src="<?php echo $r->image;?>" width="100%">
+					<?php } elseif (!empty($r->video)) {?>
+					<img src="//img.youtube.com/vi/<?php echo get_video_id($r->video);?>/sddefault.jpg" width="100%">
+					<span class="thumb-icon"><i class="fas fa-play"></i></span>
+					<?php } elseif (!empty($r->audio)) {?>
+					<img src="<?php echo theme_path();?>img/soundcloud.jpg" width="100%">
+					<span class="thumb-icon"><i class="fas fa-volume-up"></i></span>
+					<?php } elseif (!empty($img)) {?>
+					<img src="<?php echo $img;?>" width="100%">
+					<?php } ?>
+				</a>
+
+				<div class="entry-category"><?php echo $r->category;?></div>
+			</div>
+			<?php endif;?>
+
+			<?php if (!empty($r->link)) {?>
+			<h2 class="entry-title">
+				<a href="<?php echo $r->link;?>" target="_blank" rel="bookmark"><?php echo $r->title;?> <i class="fas fa-external-link-alt"></i></a>
+			</h2><!--/.entry-title-->
+			<?php } elseif (!empty($r->quote)) {?>
+			<h2 class="entry-title">
+				<a href="<?php echo $r->url;?>" rel="bookmark"><blockquote><i class="fas fa-quote-left"></i> <?php echo $r->quote;?> <i class="fas fa-quote-right"></i></blockquote></a>
+			</h2><!--/.entry-title-->
+			<?php } else {?>
+			<h2 class="entry-title">
+				<a href="<?php echo $r->url;?>" rel="bookmark"><?php echo $r->title;?></a>
+			</h2><!--/.entry-title-->
+			<?php } ?>
+
+			<?php if (empty($r->image) && empty($img) && empty($r->video) && empty($r->audio) && empty($r->quote)) :?>
+				<div class="entry-meta"><?php echo $r->description;?></div>
+			<?php endif;?>
+			<ul class="entry-meta group">
+				<li class="entry-date"><i class="far fa-calendar"></i> <?php echo format_date($r->date);?></li>
+				<?php if (disqus_count()) { ?>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $r->url ?>#disqus_thread"> <?php echo i18n('Comments');?></a></li>
+				<?php } elseif (facebook()) { ?>
+				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $r->url ?>#comments"><span><fb:comments-count href=<?php echo $r->url ?>></fb:comments-count> <?php echo i18n('Comments');?></span></a></li>
+				<?php } ?>
+				<?php if (login()) { echo '<li class="edit-post"><a href="'. $r->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
+			</ul>
+		</div>
+	</article><!--/.post-->
+	<?php if ($i++ >= config('related.count')) break; ?>
+	<?php endforeach;?>
+</div>
+<?php endif;?>

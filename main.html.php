@@ -5,7 +5,7 @@
 	<article class="masonry-item post hentry">
 		<div class="masonry-inner">
 
-			<?php if (!empty($p->image) || !empty($img)  || empty($vidTmb)) :?>
+			<?php if (!empty($p->image) || !empty($img)) :?>
 			<div class="entry-top">
 				<a class="entry-thumbnail" href="<?php echo $p->url;?>">
 					<?php if (!empty($p->image)) {?>
@@ -56,7 +56,6 @@
 	</article><!--/.post-->
 <?php endforeach;?>
 </div>
-
 
 <?php if (!empty($pagination['prev']) || !empty($pagination['next'])): ?>
 <div class="pagination group">
