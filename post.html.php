@@ -119,7 +119,7 @@
 <?php $img = get_image($r->body);?>
 	<article class="masonry-item post hentry">
 		<div class="masonry-inner">
-			<?php if (!empty($r->image) || !empty($img)) :?>
+			<?php if (!empty($r->image) || !empty($img) || empty($vidTmb)) :?>
 			<div class="entry-top">
 				<a class="entry-thumbnail" href="<?php echo $r->url;?>">
 					<?php if (!empty($r->image)) {?>

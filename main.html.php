@@ -5,7 +5,7 @@
 	<article class="masonry-item post hentry">
 		<div class="masonry-inner">
 
-			<?php if (!empty($p->image) || !empty($img)) :?>
+			<?php if (!empty($p->image) || !empty($img) || empty($vidTmb)) :?>>
 			<div class="entry-top">
 				<a class="entry-thumbnail" href="<?php echo $p->url;?>">
 					<?php if (!empty($p->image)) {?>
