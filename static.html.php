@@ -6,7 +6,7 @@
 	<div class="post-wrapper group">
 		<header class="entry-header group">
 			<h1 class="entry-title"><?php echo $p->title;?></h1>
-			<?php if (login()) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> Edit</a></span>'; } ?>
+			<?php if (authorized($p)) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i> Edit</a></span>'; } ?>
 		</header>
 		<div class="entry-content">
 			<div class="entry themeform">

@@ -48,7 +48,7 @@
 				<?php } ?>
 				<span class="entry-author"><i class="far fa-user"></i><a href="<?php echo $p->authorUrl;?>" title="<?php echo i18n('Posts_by') . ' ' . $p->authorName;?>" rel="author"><?php echo $p->authorName;?></a></span>
 				<span class="entry-category"><?php echo $p->category;?></span>
-				<?php if (login()) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i>' . i18n('Edit') . '</a></span>'; } ?>
+				<?php if (authorized($p)) { echo '<span class="edit-post"><a href="'. $p->url .'/edit?destination=post"><i class="far fa-edit"></i>' . i18n('Edit') . '</a></span>'; } ?>
 			</div>
 		</header>
 
@@ -163,7 +163,7 @@
 				<?php } elseif (facebook()) { ?>
 				<li class="entry-comments"><i class="far fa-comment"></i> <a href="<?php echo $r->url ?>#comments"><span><fb:comments-count href=<?php echo $r->url ?>></fb:comments-count> <?php echo i18n('Comments');?></span></a></li>
 				<?php } ?>
-				<?php if (login()) { echo '<li class="edit-post"><a href="'. $r->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
+				<?php if (authorized($r)) { echo '<li class="edit-post"><a href="'. $r->url .'/edit?destination=post"><i class="far fa-edit"></i> ' . i18n('Edit') . '</a></li>'; } ?>
 			</ul>
 		</div>
 	</article><!--/.post-->
