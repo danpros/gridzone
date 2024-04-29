@@ -65,7 +65,7 @@
 			<div class="clear"></div>
 
 			<div class="author-bio">
-				<div class="bio-avatar"><img alt="<?php echo $author->name;?>" src="<?php echo theme_path();?>img/avatar.png"></div>
+				<div class="bio-avatar"><img alt="<?php echo $author->name;?>" src="<?php echo $author->avatar;?>"></div>
 				<p class="bio-name"><?php echo $author->name;?></p>
 				<div class="bio-desc"><?php echo $author->about;?></div>
 				<div class="clear"></div>
