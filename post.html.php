@@ -114,7 +114,6 @@
 <?php $related = get_related($p->related, true, config('related.count'));?>
 <?php if (!empty($related)):?>
 <div class="masonry" id="masonry">
-<?php $i = 1; ?>
 <?php foreach ($related as $r):?>
 <?php $img = get_image($r->body);?>
 	<article class="masonry-item post hentry">
@@ -167,7 +166,6 @@
 			</ul>
 		</div>
 	</article><!--/.post-->
-	<?php if ($i++ >= config('related.count')) break; ?>
 	<?php endforeach;?>
 </div>
 <?php endif;?>
